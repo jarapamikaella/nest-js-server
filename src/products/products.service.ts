@@ -14,8 +14,7 @@ export class ProductService {
 
     async addProduct(name: string, price: number) {
         const newProduct = new this.productModel({ name, price });
-        const result = await newProduct.save();
-        return result.id as string;
+        await newProduct.save();
     }
 
     async getProducts() {
