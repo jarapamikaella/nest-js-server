@@ -10,8 +10,7 @@ export class ProductsController {
 
     @Post()
     async addProduct(@Body('name') name: string, @Body('price') price: number) {
-        const createdKey = await this.productsService.addProduct(name, price);
-        return { id: createdKey };
+        await this.productsService.addProduct(name, price);
     }
 
     @Get()
